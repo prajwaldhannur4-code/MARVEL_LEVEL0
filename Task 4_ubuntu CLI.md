@@ -84,8 +84,7 @@ This is the second file with more text.
 
 ## Pics
 
-![Ubuntu Terminal - folder creation](pics/task4_ubuntu_folders.png)
-![Ubuntu Terminal - cat output](pics/task4_ubuntu_cat.png)
+![Ubuntu Terminal - cat output](pics/task4_ubuntu_cat.jpeg)
 
 ---
 
