@@ -382,8 +382,8 @@ Built 555 astable circuit and verified 59.19% duty cycle on DSO.
 Learned how to use oscilloscope and calculate duty cycle.
 
 ## Pics
-![DSO Waveform](pics/task13_555_waveform.jpg)
-![Circuit](pics/task13_555_circuit.jpg)
+![555 Timer Waveform on DSO](pics/task13_555_waveform.jpeg)
+![555 Timer Circuit](pics/task13_555_circuit.jpeg)
 
 ---
 
