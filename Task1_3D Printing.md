@@ -71,9 +71,9 @@ capabilities.
 
 ## Proof
 
-![3D Printed UVCE Model 1](proof/IMG-20260311-WA0014.jpeg)
+![3D Printed UVCE Model 1](pics/IMG-20260311-WA0014.jpeg)
 
-![3D Printed UVCE Model 2](proof/IMG-20260311-WA0011.jpeg)
+![3D Printed UVCE Model 2](pics/IMG-20260311-WA0011.jpeg)
 
 ---
 
