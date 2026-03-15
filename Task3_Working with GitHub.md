@@ -82,7 +82,7 @@ no conflicts with the base branch.
 
 ---
 
-## Proof
+## Links
 
 - **My Fork:** https://github.com/prajwaldhannur4-code/git-task
 - **Issue #272:** https://github.com/UVCE-Marvel/git-task/issues/272
