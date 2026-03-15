@@ -203,7 +203,9 @@ Learned HTML/CSS basics, responsive design and how to host a webpage
 on GitHub Pages.
 
 ## Pics
-![Portfolio Webpage](pics/task7_portfolio.png)
+![Portfolio Homepage](pics/task7_portfolio1.png)
+![Portfolio Homepage](pics/task7_portfolio2.png)
+![Portfolio Homepage](pics/task7_portfolio3.png)
 
 ---
 
