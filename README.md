@@ -173,7 +173,7 @@ Learned how to navigate and operate the Linux file system using
 terminal commands efficiently.
 
 ## Pics
-![Ubuntu Terminal](pics/task4_ubuntu_folders.png)
+![Ubuntu Terminal](pics/task4_ubuntu_cat.jpeg)
 
 ---
 
