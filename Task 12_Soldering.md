@@ -41,7 +41,7 @@ the MARVEL lab.
 
 ## Pics
 
-![Soldering Proof](pics/task12_soldering.jpg)
+![Soldering Proof](pics/task12_soldering.jpeg)
 
 ---
 
