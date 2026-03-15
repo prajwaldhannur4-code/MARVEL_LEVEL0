@@ -70,8 +70,8 @@ value to 60% using standard resistor values R1=4.7kΩ and R2=10kΩ
 
 ## Pics
 
-![555 Timer Waveform on DSO](pics/task13_555_waveform.jpg)
-![555 Timer Circuit](pics/task13_555_circuit.jpg)
+![555 Timer Waveform on DSO](pics/task13_555_waveform.jpeg)
+![555 Timer Circuit](pics/task13_555_circuit.jpeg)
 
 ---
 
