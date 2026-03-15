@@ -99,7 +99,7 @@ was fully in my control!
 
 ## Pics
 
-🎥 [DC Motor Speed Control Video](pics/speed_control_of_dc_motor.mp4)
+🎥 [DC Motor Speed Control Video](pics/speed control of dc motor.mp4)
 
 ---
 
