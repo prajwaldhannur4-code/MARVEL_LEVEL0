@@ -350,7 +350,7 @@ Learned proper soldering technique and safety. Can confidently solder
 components for real hardware projects.
 
 ## Pics
-![Soldering Proof](pics/task12_soldering.jpg)
+![Soldering Proof](pics/task12_soldering.jpeg)
 
 ---
 
