@@ -69,7 +69,7 @@ capabilities.
 
 ---
 
-## Proof
+## Pics
 
 ![3D Printed UVCE Model 1](pics/IMG-20260311-WA0014.jpeg)
 
