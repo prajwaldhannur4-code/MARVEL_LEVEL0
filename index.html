@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prajwal Dhannur — Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; color: #1a1a1a; background: #fff; max-width: 680px; margin: 0 auto; }
+    .hero { padding: 2.5rem 1.5rem 2rem; border-bottom: 1px solid #e5e5e5; }
+    .avatar { width: 64px; height: 64px; border-radius: 50%; background: #dbeafe; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #1d4ed8; margin-bottom: 1rem; }
+    .name { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+    .tagline { font-size: 14px; color: #666; margin-bottom: 1rem; line-height: 1.6; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
+    .badge { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 20px; padding: 4px 12px; font-size: 12px; color: #555; }
+    .section { padding: 1.5rem; border-bottom: 1px solid #e5e5e5; }
+    .section-title { font-size: 13px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .about-text { font-size: 14px; color: #555; line-height: 1.7; }
+    .project-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .project-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+    .project-desc { font-size: 13px; color: #666; line-height: 1.6; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .tag { background: #f5f5f5; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #666; }
+    .achievement { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 0.75rem; }
+    .achievement-icon { width: 32px; height: 32px; border-radius: 8px; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; color: #92400e; font-weight: 500; }
+    .achievement-text { font-size: 14px; line-height: 1.6; color: #1a1a1a; }
+    .achievement-sub { font-size: 12px; color: #888; margin-top: 2px; }
+    .contact-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .contact-btn { background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 8px 16px; font-size: 13px; cursor: pointer; color: #1a1a1a; text-decoration: none; }
+    .contact-btn:hover { background: #ebebeb; }
+    @media (max-width: 480px) {
+      .hero { padding: 1.5rem 1rem; }
+      .section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="avatar">PD</div>
+  <div class="name">Prajwal Dhannur</div>
+  <div class="tagline">2nd Sem B.Tech Student at UVCE, Bengaluru<br>Designer · Builder · Maker · Minecraft Enthusiast</div>
+  <div class="badges">
+    <span class="badge">UVCE MARVEL</span>
+    <span class="badge">Product Cohort</span>
+    <span class="badge">IISc Workshop Alumni</span>
+    <span class="badge">Mecronin 2nd Place</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">About Me</div>
+  <p class="about-text">
+    I am a first year B.Tech student at UVCE passionate about designing and building things.
+    I started my design journey with Onshape and moved to Fusion 360 as part of MARVEL's
+    Product Cohort. I love turning ideas into real physical objects — whether it's a robot,
+    a plane or a random design I thought of. When I'm not building things, I'm probably
+    playing Minecraft.
+  </p>
+</div>
+
+<div class="section">
+  <div class="section-title">Projects</div>
+
+  <div class="project-card">
+    <div class="project-title">RC Plane — IISc Do Drones Workshop</div>
+    <div class="project-desc">Built a remote controlled fixed wing aircraft as part of a team of 4 at the IISc UAV Laboratory. Learned aerodynamics, airframe assembly, avionics and flight operations during the 5 day workshop.</div>
+    <div class="project-tags">
+      <span class="tag">Aerospace</span>
+      <span class="tag">IISc</span>
+      <span class="tag">Team of 4</span>
+      <span class="tag">Hardware</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-title">Maze Solving Robot</div>
+    <div class="project-desc">Built a maze solving robot with a team of 4. Involved circuit design, soldering motors to wires and programming the ESP32 microcontroller to navigate through a maze autonomously.</div>
+    <div class="project-tags">
+      <span class="tag">ESP32</span>
+      <span class="tag">Robotics</span>
+      <span class="tag">Soldering</span>
+      <span class="tag">Team of 4</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-title">Minchu — 3D Printed Scale Model</div>
+    <div class="project-desc">Designed and 3D printed a detailed miniature model of the Minchu building using Bambu Lab printer at MARVEL lab. Learned slicing, infill settings and PLA filament properties.</div>
+    <div class="project-tags">
+      <span class="tag">3D Printing</span>
+      <span class="tag">Bambu Lab</span>
+      <span class="tag">CAD Design</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-title">Currency Converter Web App</div>
+    <div class="project-desc">Built a live currency converter using ExchangeRate API with JavaScript. Supports 11 major currencies with real time exchange rates and quick conversion chips.</div>
+    <div class="project-tags">
+      <span class="tag">HTML/CSS/JS</span>
+      <span class="tag">API</span>
+      <span class="tag">Web App</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Achievements</div>
+  <div class="achievement">
+    <div class="achievement-icon">2</div>
+    <div>
+      <div class="achievement-text">2nd Place — Mecronin at Impetus Fest</div>
+      <div class="achievement-sub">Design & Engineering competition — UVCE</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">★</div>
+    <div>
+      <div class="achievement-text">Do Drones Workshop Certificate — IISc Bengaluru</div>
+      <div class="achievement-sub">UAV Laboratory, Dept of Aerospace Engineering — Dec 2025</div>
+    </div>
+  </div>
+  <div class="achievement">
+    <div class="achievement-icon">★</div>
+    <div>
+      <div class="achievement-text">UVCE MARVEL — D-P-001 Level 1</div>
+      <div class="achievement-sub">Introduction to Design & Prototyping</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Connect</div>
+  <div class="contact-row">
+    <a class="contact-btn" href="https://github.com/prajwaldhannur4-code">GitHub</a>
+    <span class="contact-btn">UVCE — 2nd Sem B.Tech</span>
+    <span class="contact-btn">Bengaluru, Karnataka</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currency Converter — Prajwal Dhannur</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #f9f9f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 2rem 1rem; }
+    .card { background: #fff; border: 1px solid #e5e5e5; border-radius: 16px; padding: 2rem; width: 100%; max-width: 480px; }
+    h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
+    .subtitle { font-size: 13px; color: #888; margin-bottom: 1.5rem; }
+    label { font-size: 13px; color: #555; display: block; margin-bottom: 4px; }
+    input[type=number], select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; margin-bottom: 1rem; background: #fff; color: #1a1a1a; }
+    input[type=number]:focus, select:focus { outline: none; border-color: #888; }
+    .row { display: flex; gap: 12px; }
+    .row select { flex: 1; }
+    .swap-btn { width: 100%; padding: 10px; background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; cursor: pointer; margin-bottom: 1rem; color: #1a1a1a; }
+    .swap-btn:hover { background: #ebebeb; }
+    .convert-btn { width: 100%; padding: 12px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; margin-bottom: 1rem; }
+    .convert-btn:hover { background: #333; }
+    .result-box { background: #f5f5f5; border-radius: 8px; padding: 1rem 1.25rem; display: none; }
+    .result-amount { font-size: 28px; font-weight: 500; color: #1a1a1a; }
+    .result-label { font-size: 13px; color: #666; margin-top: 4px; }
+    .rate-info { font-size: 12px; color: #999; margin-top: 6px; }
+    .error { color: #dc2626; font-size: 13px; margin-top: 8px; }
+    .loading { color: #888; font-size: 13px; margin-top: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .chip { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 20px; padding: 4px 12px; font-size: 12px; cursor: pointer; color: #555; }
+    .chip:hover { background: #ebebeb; }
+    .footer { font-size: 12px; color: #aaa; margin-top: 1.5rem; text-align: center; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>Currency Converter</h1>
+  <div class="subtitle">Live exchange rates via ExchangeRate API</div>
+
+  <label>Amount</label>
+  <input type="number" id="amount" value="1" min="0" placeholder="Enter amount" />
+
+  <label>From</label>
+  <select id="fromCurrency">
+    <option value="USD">USD — US Dollar</option>
+    <option value="EUR">EUR — Euro</option>
+    <option value="GBP">GBP — British Pound</option>
+    <option value="INR" selected>INR — Indian Rupee</option>
+    <option value="JPY">JPY — Japanese Yen</option>
+    <option value="AUD">AUD — Australian Dollar</option>
+    <option value="CAD">CAD — Canadian Dollar</option>
+    <option value="CHF">CHF — Swiss Franc</option>
+    <option value="CNY">CNY — Chinese Yuan</option>
+    <option value="SGD">SGD — Singapore Dollar</option>
+    <option value="AED">AED — UAE Dirham</option>
+  </select>
+
+  <button class="swap-btn" onclick="swapCurrencies()">⇅ Swap currencies</button>
+
+  <label>To</label>
+  <select id="toCurrency">
+    <option value="USD" selected>USD — US Dollar</option>
+    <option value="EUR">EUR — Euro</option>
+    <option value="GBP">GBP — British Pound</option>
+    <option value="INR">INR — Indian Rupee</option>
+    <option value="JPY">JPY — Japanese Yen</option>
+    <option value="AUD">AUD — Australian Dollar</option>
+    <option value="CAD">CAD — Canadian Dollar</option>
+    <option value="CHF">CHF — Swiss Franc</option>
+    <option value="CNY">CNY — Chinese Yuan</option>
+    <option value="SGD">SGD — Singapore Dollar</option>
+    <option value="AED">AED — UAE Dirham</option>
+  </select>
+
+  <button class="convert-btn" onclick="convert()">Convert</button>
+
+  <div id="status"></div>
+
+  <div class="result-box" id="resultBox">
+    <div class="result-amount" id="resultAmount"></div>
+    <div class="result-label" id="resultLabel"></div>
+    <div class="rate-info" id="rateInfo"></div>
+  </div>
+
+  <div>
+    <div style="font-size:12px;color:#aaa;margin-top:1rem;margin-bottom:6px;">Quick conversions</div>
+    <div class="chips">
+      <span class="chip" onclick="quickConvert('USD','INR')">USD → INR</span>
+      <span class="chip" onclick="quickConvert('EUR','INR')">EUR → INR</span>
+      <span class="chip" onclick="quickConvert('INR','USD')">INR → USD</span>
+      <span class="chip" onclick="quickConvert('GBP','INR')">GBP → INR</span>
+      <span class="chip" onclick="quickConvert('USD','EUR')">USD → EUR</span>
+      <span class="chip" onclick="quickConvert('JPY','INR')">JPY → INR</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    Built by Prajwal Dhannur | UVCE MARVEL D-P-001 Task 2<br>
+    API: api.exchangerate-api.com
+  </div>
+</div>
+
+<script>
+  async function convert() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const from = document.getElementById('fromCurrency').value;
+    const to = document.getElementById('toCurrency').value;
+    const status = document.getElementById('status');
+    const resultBox = document.getElementById('resultBox');
+
+    if (!amount || amount <= 0) {
+      status.innerHTML = '<div class="error">Please enter a valid amount</div>';
+      return;
+    }
+
+    status.innerHTML = '<div class="loading">Fetching live rates...</div>';
+    resultBox.style.display = 'none';
+
+    try {
+      const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${from}`);
+      const data = await res.json();
+      const rate = data.rates[to];
+      const result = (amount * rate).toFixed(2);
+
+      status.innerHTML = '';
+      resultBox.style.display = 'block';
+      document.getElementById('resultAmount').textContent = `${result} ${to}`;
+      document.getElementById('resultLabel').textContent = `${amount} ${from} equals`;
+      document.getElementById('rateInfo').textContent = `1 ${from} = ${rate.toFixed(4)} ${to} — Live rate`;
+    } catch (e) {
+      status.innerHTML = '<div class="error">Could not fetch rates. Check your connection.</div>';
+    }
+  }
+
+  function swapCurrencies() {
+    const from = document.getElementById('fromCurrency');
+    const to = document.getElementById('toCurrency');
+    const temp = from.value;
+    from.value = to.value;
+    to.value = temp;
+  }
+
+  function quickConvert(from, to) {
+    document.getElementById('fromCurrency').value = from;
+    document.getElementById('toCurrency').value = to;
+    document.getElementById('amount').value = 1;
+    convert();
+  }
+
+  convert();
+</script>
+</body>
+</html>
