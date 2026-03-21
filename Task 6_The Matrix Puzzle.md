@@ -110,7 +110,6 @@ arranged as a 100×100 grid formed this hidden image!
 ## Pics
 
 ![Decoded Image](https://raw.githubusercontent.com/prajwaldhannur4-code/MARVEL_LEVEL0/main/pics/task6_decoded_image.png)
-![Colab Code](https://raw.githubusercontent.com/prajwaldhannur4-code/MARVEL_LEVEL0/main/pics/task6_colab_code.png)
 
 ---
 
