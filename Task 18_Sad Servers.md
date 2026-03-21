@@ -103,7 +103,7 @@ Submitted the murderer's name to verify the solution.
 
 ## Pics
 
-![Sad Servers Solution] (pics/task 18_sad servers.jpeg)
+![Sad Servers](pics/task 18_sad servers.jpeg)
 
 ---
 
