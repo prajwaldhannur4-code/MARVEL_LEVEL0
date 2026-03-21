@@ -103,8 +103,7 @@ Submitted the murderer's name to verify the solution.
 
 ## Pics
 
-![Sad Servers Crime Scene](pics/task18_crimescene.png)
-![Sad Servers Solution](pics/task18_solution.png)
+![Sad Servers Solution](pics/task 18_sad servers.jpeg)
 
 ---
 
